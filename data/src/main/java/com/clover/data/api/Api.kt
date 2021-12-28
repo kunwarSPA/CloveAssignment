@@ -3,7 +3,10 @@ package com.clover.data.api
 import com.clover.domain.clovelist.entity.response.CloveData
 import retrofit2.http.GET
 
-interface APIClass {
+interface Api {
+
     @GET("api/character")
-    fun getUserDetail(): CloveData
+    suspend fun getUserDetail(): CloveData
+
+ 
 }
