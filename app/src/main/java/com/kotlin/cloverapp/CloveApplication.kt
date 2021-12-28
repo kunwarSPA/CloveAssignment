@@ -1,4 +1,4 @@
-package com.kotlin.employeeaccountapp
+package com.kotlin.cloverapp
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

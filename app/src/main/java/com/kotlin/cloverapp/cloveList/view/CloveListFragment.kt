@@ -1,4 +1,4 @@
-package com.kotlin.employeeaccountapp.cloveList.view
+package com.kotlin.cloverapp.cloveList.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,9 +17,9 @@ import com.clover.domain.clovelist.entity.response.CloveData
 import com.clover.domain.clovelist.entity.response.Info
 import com.clover.domain.clovelist.entity.response.Result
 import com.clover.domain.clovelist.result.APIResult
-import com.kotlin.employeeaccountapp.R
-import com.kotlin.employeeaccountapp.cloveList.viewmodel.CloveListViewModel
-import com.kotlin.employeeaccountapp.databinding.FragmentListBinding
+import com.kotlin.cloverapp.R
+import com.kotlin.cloverapp.cloveList.viewmodel.CloveListViewModel
+import com.kotlin.cloverapp.databinding.FragmentListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -39,10 +39,7 @@ class CloveListFragment : Fragment() {
             val thisItem: Result = cloveData.results.get(position)
             val args= bundleOf("ResultData" to thisItem
             )
-            //args.putSerializable("ResultData",thisItem)
-            //cloveData = (args!!.getSerializable("UserValidateObject") as CloveData?)!!
             navController.navigate(R.id.navigateToDetailFragment,args)
-           // Log.i("getuserValidate", cloveData.toString())
         }
 
     override fun onCreateView(
@@ -85,16 +82,6 @@ class CloveListFragment : Fragment() {
             }
         }
     }
-    companion object {
 
-        val FRAGMENT_NAME = CloveListFragment::class.java.name
-
-        @JvmStatic
-        fun newInstance() =
-            CloveListFragment().apply {
-                arguments = Bundle().apply {
-                }
-            }
-    }
 
 }

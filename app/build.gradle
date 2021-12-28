@@ -11,7 +11,7 @@ android {
     buildToolsVersion "31.0.0"
 
     defaultConfig {
-        applicationId "com.kotlin.employeeaccountapp"
+        applicationId "com.kotlin.cloverapp"
         minSdkVersion 19
         targetSdkVersion 31
         versionCode 1
@@ -102,15 +102,10 @@ dependencies {
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
-    // Room
-    api "androidx.room:room-runtime:$roomVersion"
-    kapt "androidx.room:room-compiler:$roomVersion"
-    api "androidx.room:room-ktx:$roomVersion"
 
 
-    //RX
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
-    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+
 
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

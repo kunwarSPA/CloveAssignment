@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/cloveListFragment"
-        android:name="com.kotlin.employeeaccountapp.cloveList.view.CloveListFragment"
+        android:name="com.kotlin.cloverapp.cloveList.view.CloveListFragment"
         android:label="CloveListFragment" >
         <action
             android:id="@+id/navigateToDetailFragment"
@@ -13,6 +13,6 @@
     </fragment>
     <fragment
         android:id="@+id/cloveDetailsFragment"
-        android:name="com.kotlin.employeeaccountapp.cloveList.view.CloveDetailsFragment"
+        android:name="com.kotlin.cloverapp.cloveList.view.CloveDetailsFragment"
         android:label="CloveDetailsFragment" />
 </navigation>

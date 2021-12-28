@@ -1,11 +1,11 @@
-package com.employee.common.di
+package com.clover.common.di
 
+import com.clover.data.api.Api
 import com.clover.data.repositoryImpl.CloveRepositoryImpl
 import com.clover.data.useCaseImpl.CloveUseCaseImpl
 import com.clover.domain.clovelist.repository.CloveRepository
 import com.clover.domain.clovelist.usecase.CloveUseCase
 import com.employee.data.BuildConfig
-import com.clover.data.api.Api
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -66,11 +66,6 @@ class NetworkModule {
         return  CloveUseCaseImpl(cloveRepository)
     }
 
-   /* @Singleton
-    @Provides
-    fun providesEmployeeRepository(employeeDetailsRepositoryImpl: EmployeeDetailsRepositoryImpl): EmployeeDetailsRepository {
-        return employeeDetailsRepositoryImpl
-    }*/
 
 
     @Provides
@@ -114,18 +109,7 @@ class NetworkModule {
 
 
 
-   /* @Singleton
-    @Provides
-    fun providesLoginRepository(api : Api,loginMapper: LoginMapper): LoginRepository {
-        return LoginRepositoryImpl(api,loginMapper)
-    }*/
-    /* @Provides
-     @Singleton
-     fun provideObjectMapper(): ObjectMapper = ObjectMapper()
-         .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-         .enable(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES)
-         .registerModule(KotlinModule())
- */
+
 
 
 

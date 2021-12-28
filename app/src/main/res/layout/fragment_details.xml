@@ -4,45 +4,103 @@
     android:layout_width="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
+    android:layout_margin="@dimen/dimen_2dp"
+    android:padding="@dimen/dimen_3dp"
     android:layout_height="match_parent">
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_weight=".5"
+        android:text="NAME"
+        android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/name"
+        android:layout_weight=".5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/dimen_20sp"
+        android:text="fdsfsfsdsdadad"
         tools:ignore="MissingConstraints" />
-
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Location Name"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/locationName"
+        android:layout_weight=".5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="locationName"
         android:textSize="@dimen/dimen_20sp"
-        tools:ignore="MissingConstraints" />
-
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:layout_weight=".5"/>
     <TextView
         android:id="@+id/type"
+        android:layout_weight=".5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="type"
         android:textSize="@dimen/dimen_20sp"
         tools:ignore="MissingConstraints" />
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".5"
+        android:text="Dimension"/>
+        <TextView
         android:id="@+id/dimension"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dimension"
         android:textSize="@dimen/dimen_20sp"
+            android:layout_weight=".5"
         tools:ignore="MissingConstraints" />
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight=".5"
+            android:text="Number of Resident"
+            android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/nor"
+        android:layout_weight=".5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Number of resident"
         android:textSize="@dimen/dimen_20sp"
         tools:ignore="MissingConstraints" />
+    </LinearLayout>
 </LinearLayout>

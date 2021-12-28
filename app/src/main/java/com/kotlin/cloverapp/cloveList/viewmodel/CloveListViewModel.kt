@@ -1,4 +1,4 @@
-package com.kotlin.employeeaccountapp.cloveList.viewmodel
+package com.kotlin.cloverapp.cloveList.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData

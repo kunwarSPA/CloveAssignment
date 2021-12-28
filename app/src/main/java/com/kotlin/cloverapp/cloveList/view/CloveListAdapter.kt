@@ -1,15 +1,13 @@
-package com.kotlin.employeeaccountapp.cloveList.view
+package com.kotlin.cloverapp.cloveList.view
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.clover.domain.clovelist.entity.response.CloveData
-import com.kotlin.employeeaccountapp.databinding.RecyclervieItemBinding
+import com.kotlin.cloverapp.databinding.RecyclervieItemBinding
 
 class CloveListAdapter(var context: Context, private var cloveData: CloveData) : RecyclerView.Adapter<CloveListAdapter.CustomViewHolder>() {
     private lateinit var binding: RecyclervieItemBinding
@@ -49,21 +47,11 @@ class CloveListAdapter(var context: Context, private var cloveData: CloveData) :
     fun setOnItemClickListener(itemClickListener: View.OnClickListener) {
         mOnItemClickListener = itemClickListener
     }
-    //set updated feeddata
+
     fun setFeedList(cloveData: CloveData){
         this.cloveData=cloveData
     }
-    companion object{
-        @JvmStatic
-        @BindingAdapter("imageUrl")
-        fun loadImage(view: ImageView, url: String?) {
-            if (!url.isNullOrEmpty()) {
-                Glide.with(view.context)
-                    .load(url)
-                    .into(view)
-            }
-        }
-    }
+
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.bind(cloveData, position)
     }
