@@ -1,23 +1,23 @@
 package com.kotlin.employeeaccountapp.cloveList.view
 
-import android.R
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.clover.domain.clovelist.entity.response.CloveData
 import com.clover.domain.clovelist.entity.response.Info
 import com.clover.domain.clovelist.entity.response.Result
 import com.clover.domain.clovelist.result.APIResult
+import com.kotlin.employeeaccountapp.R
 import com.kotlin.employeeaccountapp.cloveList.viewmodel.CloveListViewModel
 import com.kotlin.employeeaccountapp.databinding.FragmentListBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,23 +29,20 @@ class CloveListFragment : Fragment() {
     private val viewModel: CloveListViewModel by viewModels()
     lateinit var mCustomRecyclerAdapter: CloveListAdapter
     private lateinit var binding: FragmentListBinding
-    private var isAllFabVisible: Boolean? = null
     private lateinit var cloveData: CloveData
-   // private var mCallback: OnDashboardCallback? = null
-
+    lateinit var navController: NavController
 
     private val onItemClickListener =
         View.OnClickListener { view ->
-            // This viewHolder will have all required values.
             val viewHolder = view.tag as RecyclerView.ViewHolder
             val position = viewHolder.adapterPosition
-            // viewHolder.getItemId();
-            // viewHolder.getItemViewType();
-            // viewHolder.itemView;
             val thisItem: Result = cloveData.results.get(position)
-            val args= arguments
-            cloveData = (args!!.getSerializable("UserValidateObject") as CloveData?)!!
-            Log.i("getuserValidate", cloveData.toString())
+            val args= bundleOf("ResultData" to thisItem
+            )
+            //args.putSerializable("ResultData",thisItem)
+            //cloveData = (args!!.getSerializable("UserValidateObject") as CloveData?)!!
+            navController.navigate(R.id.navigateToDetailFragment,args)
+           // Log.i("getuserValidate", cloveData.toString())
         }
 
     override fun onCreateView(
@@ -63,7 +60,13 @@ class CloveListFragment : Fragment() {
         mCustomRecyclerAdapter.setOnItemClickListener(onItemClickListener);
         viewModel.getCloveData()
 
+
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
     }
 
     private fun userStatusUpdate(result: APIResult<CloveData>) {
@@ -76,7 +79,6 @@ class CloveListFragment : Fragment() {
                 mCustomRecyclerAdapter.setFeedList(result.data)
                 mCustomRecyclerAdapter.notifyDataSetChanged()
 
-                // mCallback?.navigateToDashboardPage()
             }
             is APIResult.Failure -> {
                 Toast.makeText(activity, result.message, Toast.LENGTH_LONG).show()

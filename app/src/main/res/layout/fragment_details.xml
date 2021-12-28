@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
 
@@ -11,10 +11,7 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/dimen_13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="154dp"
+        android:textSize="@dimen/dimen_20sp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -22,10 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="locationName"
-        android:textSize="@dimen/dimen_10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="202dp"
+        android:textSize="@dimen/dimen_20sp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -33,10 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="type"
-        android:textSize="@dimen/dimen_10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="260dp"
+        android:textSize="@dimen/dimen_20sp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -44,20 +35,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dimension"
-        android:textSize="@dimen/dimen_10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="346dp"
+        android:textSize="@dimen/dimen_20sp"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/nor"
-        android:layout_width="76dp"
-        android:layout_height="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Number of resident"
-        android:textSize="@dimen/dimen_10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="419dp"
+        android:textSize="@dimen/dimen_20sp"
         tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

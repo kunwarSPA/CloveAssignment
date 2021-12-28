@@ -53,6 +53,7 @@ scabbard {
 
 
 dependencies {
+    def nav_version = "2.3.5"
     // Declare the dependencies for the Firebase Cloud Messaging and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -110,6 +111,10 @@ dependencies {
     //RX
     implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     //Test
     //Test

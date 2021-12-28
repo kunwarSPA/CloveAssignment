@@ -8,17 +8,13 @@ import com.clover.domain.clovelist.entity.response.CloveData
 import com.clover.domain.clovelist.result.APIResult
 import com.clover.domain.clovelist.usecase.Callback
 import com.clover.domain.clovelist.usecase.CloveUseCase
-import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.launch
 
 class CloveListViewModel  @ViewModelInject constructor(
     private val cloveUseCase: CloveUseCase
 ) : ViewModel() {
 
-    var userDataLiveData = MutableLiveData<APIResult<CloveData>>()
     var cloveuseCaseLiveData = MutableLiveData<APIResult<CloveData>>()
-    private val disposables = CompositeDisposable()
-    val progressVisible = MutableLiveData<Boolean>()
 
 
     fun getCloveData() {
@@ -29,7 +25,6 @@ class CloveListViewModel  @ViewModelInject constructor(
 
     private val cloveuseCaseCallBack = object : Callback<CloveData> {
         override fun onSuccess(result: CloveData) {
-            // employeeDetailUseCase.updateEmployeeDetailInDb()
             cloveuseCaseLiveData.value = APIResult.Success(data =result)
         }
 
