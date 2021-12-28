@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.clover.domain.clovelist.entity.response.CloveData
 import com.clover.domain.clovelist.entity.response.Info
 import com.clover.domain.clovelist.entity.response.Result
-import com.employee.domain.login.result.APIResult
+import com.clover.domain.clovelist.result.APIResult
 import com.kotlin.employeeaccountapp.cloveList.viewmodel.CloveListViewModel
 import com.kotlin.employeeaccountapp.databinding.FragmentListBinding
 import dagger.hilt.android.AndroidEntryPoint
