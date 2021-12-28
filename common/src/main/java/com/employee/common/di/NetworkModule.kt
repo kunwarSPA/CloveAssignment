@@ -1,11 +1,11 @@
 package com.clover.common.di
 
+import com.clover.common.BuildConfig
 import com.clover.data.api.Api
 import com.clover.data.repositoryImpl.CloveRepositoryImpl
 import com.clover.data.useCaseImpl.CloveUseCaseImpl
 import com.clover.domain.clovelist.repository.CloveRepository
 import com.clover.domain.clovelist.usecase.CloveUseCase
-import com.employee.data.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
