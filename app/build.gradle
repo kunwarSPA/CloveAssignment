@@ -11,14 +11,17 @@ android {
     buildToolsVersion "31.0.0"
 
     defaultConfig {
-        applicationId "com.clover.cloveassignment"
+        applicationId "com.kotlin.employeeaccountapp"
         minSdkVersion 19
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
     }
+
+
 
     buildTypes {
         release {
@@ -42,17 +45,16 @@ android {
         outputFormat "svg"
     }
 }
+
 scabbard {
     enabled true
     outputFormat "svg"
 }
+
+
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:29.0.0')
     // Declare the dependencies for the Firebase Cloud Messaging and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation 'com.google.firebase:firebase-messaging-ktx'
-    implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-messaging:23.0.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':data')
     implementation project(':common')
@@ -62,7 +64,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'com.google.firebase:firebase-messaging-ktx:22.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -96,11 +97,19 @@ dependencies {
     // Dagger
     implementation 'com.google.dagger:dagger:2.29.1'
     kapt 'com.google.dagger:dagger-compiler:2.29.1'
-    annotationProcessor "com.google.dagger:dagger-android-processor:2.11"
+
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    // Room
+    api "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    api "androidx.room:room-ktx:$roomVersion"
 
+
+    //RX
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
 
     //Test
     //Test
